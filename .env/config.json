@@ -1,0 +1,14 @@
+{
+  "tg_bot_token": "123456:XXXXX",
+  "group_id": -123456,
+  "price": "10",
+  "host": "https://hostfornotify.com",
+
+  "proxy": {
+    "enable_proxy": false,
+    "protocol": "socks5",
+    "host": "127.0.0.1",
+    "port": 10808
+  }
+
+}

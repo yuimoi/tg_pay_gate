@@ -1,0 +1,7 @@
+go get -u gorm.io/gorm
+go get -u gorm.io/driver/sqlite
+go get -u github.com/glebarez/sqlite
+go get -u github.com/google/uuid
+go get -u github.com/go-telegram-bot-api/telegram-bot-api/v5
+go get -u github.com/shopspring/decimal
+go get -u github.com/gin-gonic/gin

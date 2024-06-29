@@ -1,0 +1,8 @@
+{
+  "pid": "123456",
+  "key": "XXXXX",
+  "url": "https://mopay.vip/api/order/epay/submit.php",
+  "pay_type": "USDT-TRON-2-USDT",
+
+  "notify_url": "/api/epay_notify"
+}
