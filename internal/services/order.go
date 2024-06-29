@@ -5,6 +5,7 @@ import (
 	"errors"
 	"fmt"
 	"github.com/gin-gonic/gin"
+	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
 	"github.com/google/uuid"
 	"github.com/shopspring/decimal"
 	"net/url"
@@ -133,6 +134,14 @@ func OrderSuccess(order *models.Order) error {
 	if result.RowsAffected == 0 {
 		return errors.New("没有该订单")
 	}
+
+	siteConfig := config.GetSiteConfig()
+	// 订单完成前，尝试解封用户，防止用户被踢出后无法使用邀请链接，tg踢出用户默认行为是封禁用户
+	_ = tg_bot.UnbanUser(siteConfig.GroupID, order.TgID)
+
+	// 发送成功消息
+	msg := tgbotapi.NewMessage(order.TgID, "支付成功")
+	_, _ = tg_bot.Bot.Send(msg)
 
 	// 拉用户进群
 	err := tg_bot.SendInviteJoinGroup(order.TgID)

@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"github.com/gin-gonic/gin"
 	"tg_pay_gate/internal/models"
 	"tg_pay_gate/internal/router"
 	"tg_pay_gate/internal/utils/config"
@@ -11,6 +12,8 @@ import (
 )
 
 func main() {
+	gin.SetMode(gin.ReleaseMode)
+
 	port := flag.String("port", "8086", "http运行端口")
 	flag.Parse()
 

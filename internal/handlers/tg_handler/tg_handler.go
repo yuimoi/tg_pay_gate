@@ -66,10 +66,6 @@ func JoinGroupCommand(update tgbotapi.Update) {
 		_, _ = tg_bot.Bot.Send(msg)
 		return
 	}
-	siteConfig := config.GetSiteConfig()
-
-	// 发送邀请前，要解封用户，防止用户被踢出后无法使用邀请链接，tg踢出用户默认行为是封禁用户
-	_ = tg_bot.UnbanUser(siteConfig.GroupID, userTgID)
 
 	// 假设要邀请的群组 ID
 	err := tg_bot.SendInviteJoinGroup(userTgID)
