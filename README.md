@@ -20,7 +20,7 @@ https://github.com/yuimoi/tg_pay_gate/assets/119736684/9ec4f9db-d81a-4968-afb2-d
 机器人拉进群组，并设置为管理员，群组可以设置为私有，以防用户直接进入
 
 ### 支付说明
-使用通用易支付接口，[Mopay](mopay.vip)或自行寻找易支付进行接入，支付信息填写到epay_config.json
+使用通用易支付接口，[Mopay](https://mopay.vip/)或自行寻找易支付进行接入，支付信息填写到epay_config.json
 
 因为需要接收支付成功的回调信息，所以需要对外开放http请求，运行时附带参数可修改http运行端口 `--port 8086`
 
